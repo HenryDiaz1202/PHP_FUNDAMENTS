@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <form action="calculadora.php" method="POST">
+	
+	<h1>CALCULADORA</h1>	
+                
+	<input class="input" type="number" name="valor_a" value="0">
+        <input class="input" type="number" name="valor_b" value="0">
+
+        <label for="">SUMAR</label>
+        <input type="radio" class="rbtn" name="rd" value="1" id="rd1">
+        <label for="">RESTAR</label>
+        <input type="radio" class="rbtn" name="rd" value="2" id="rd2">
+        <label for="">DIVIDIR</label>
+        <input type="radio" class="rbtn" name="rd" value="3" id="rd2">
+        <label for="">MULTIPLICAR</label>
+        <input type="radio" class="rbtn" name="rd" value="4" id="rd4">
+
+        <input type="submit" id="submt" value="Pasar números">
+    </form>
+
+    <script src="main.js"></script>
+</body>
+</html>
