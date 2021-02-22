@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(1, 14, 14);
+}
+form{
+    width: 30%;
+    height: auto;
+    background-color: rgb(2, 56, 2);
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    margin-top: 12%;
+}
+label{
+    color: white;
+    display: inline-block;
+    margin-top: 20px;
+}
+#num{
+    width: 60%;
+    height: 30px;
+    color: brown;
+    font-size: 22px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+#submt{
+    width: 40%;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(7, 78, 71);
+}
