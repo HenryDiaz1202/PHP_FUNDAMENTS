@@ -1,15 +1,11 @@
 <?php
 
-function encontrar($datos){
-$valores = array_count_values($datos);
-arsort($valores);
-return  count($valores) > 0 ? [array_key_first($valores), $valores[array_key_first($valores)]] : ["",0];
-}
-
-
 $rango = $_POST["numero"];
 $datos;
 
+$val_c;
+$val_v;
+$suma=0;
 
 if($rango <= 0 || $rango > 20)
 {
@@ -30,8 +26,41 @@ for($a=0; $a<=$rango; $a++){
 echo ("<h4> $datos[$a] </h4>");
 }
 }
-echo ("<h3> EL NÚMERO QUE MÁS SE REPITE ES :   </h3>");
-echo(encontrar($datos));
+echo ("<h3> ----------------------------------------------------------------------------------------------------------------------  </h3>");
+$datos = array_count_values($datos);
+asort($datos);
+
+foreach ($datos as $c => $v) {
+    echo "Numero = "." $c Cantidad se repite = $v <br />";
+     $suma += $c;	
+}
+echo ("<h3> ----------------------------------------------------------------------------------------------------------------------  </h3>");
+
+if($v == 1)
+{
+echo ("<h3> NO HAY NUMERO QUE SE REPITA MAS. </h3>");
+}
+else
+{
+echo ("<h3> EL NÚMERO QUE MÁS SE REPITE ES :   **  $c  **  Y SE REPITE : **  $v  ** VECES.</h3>");
+}
+//
+$resta= $c * $v;
+$total = ($suma - $resta);
+//
+if($v == 1)
+{
+echo ("<h3> ----------------------------------------------------------------------------------------------------------------------  </h3>");
+echo "<h3> HACEMOS LA SUMA DE TODOS LOS NUMEROS YA QUE NO HAY NINGUNO QUE SE REPITA.  </h3>";
+echo "TOTAL = ".$suma;
+}
+else
+{
+echo ("<h3> ----------------------------------------------------------------------------------------------------------------------  </h3>");
+
+echo "<h3> SUMA DEL RESTO DE NUMEROS SIN INCLUIR EL QUE MAS SE REPITE. </h3>";
+echo "TOTAL = ".$total;
+}
 
 ?>
 
