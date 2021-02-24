@@ -20,18 +20,25 @@ $personas->setDireccion($direcc);
 
 $array[] = array( "PERSONAS" => array ('Nombre : '=>$personas->getNombre(),'Apellidos : '=>$personas->getApellidos(),'Edad : '=>$personas->getEdad(),'Sexo : '=>$personas->getSexo(),'Direccion : '=>$personas->getDireccion()));
 
+$usr [] = array();
+
 $_SESSION['sesion'] = $array;
 //print_r($_SESSION['sesion']);
+
+$usr=array($_SESSION['sesion']);
 
 $json_string = json_encode($array);
 $file = 'datos.json';
 file_put_contents($file, $json_string, FILE_APPEND | LOCK_EX); 
 
-echo("ver json");
 $jsonfile = file_get_contents("datos.json");
 $arrayjson = json_decode($jsonfile,true);
 foreach($arrayjson as $arr){
 print_r($arr);
 }
+echo ("--------------------------------------------------------------------------------------------------------");
+echo ("<h3> Usuario Ingresado </h3>");
+
+echo ("<br>--------------------------------------------------------------------------------------------------------");
 
 ?>
