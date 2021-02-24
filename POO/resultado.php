@@ -18,18 +18,20 @@ $personas->setSexo($sexo);
 $personas->setDireccion($direcc);
 
 
-$array[] = array('Nombre : '=>$personas->getNombre(),'Apellidos : '=>$personas->getApellidos(),'Edad : '=>$personas->getEdad(),'Sexo : '=>$personas->getSexo(),'Direccion : '=>$personas->getDireccion());
+$array[] = array( "PERSONAS" => array ('Nombre : '=>$personas->getNombre(),'Apellidos : '=>$personas->getApellidos(),'Edad : '=>$personas->getEdad(),'Sexo : '=>$personas->getSexo(),'Direccion : '=>$personas->getDireccion()));
 
 $_SESSION['sesion'] = $array;
 //print_r($_SESSION['sesion']);
 
 $json_string = json_encode($array);
 $file = 'datos.json';
-file_put_contents($file, $json_string); 
+file_put_contents($file, $json_string, FILE_APPEND | LOCK_EX); 
 
 echo("ver json");
-$jsonfile = file_get_contents(js.json);
-$arrayjson = json_decode($jsonfile, true);
-print_r($arrayjson);
+$jsonfile = file_get_contents("datos.json");
+$arrayjson = json_decode($jsonfile,true);
+foreach($arrayjson as $arr){
+print_r($arr);
+}
 
 ?>
