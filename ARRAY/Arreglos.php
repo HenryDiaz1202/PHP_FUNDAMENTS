@@ -23,7 +23,7 @@ $datos[$num]++;
 }
 echo ("<h3> LISTA DE NÚMEROS CAPTADOS  </h3>");
 for($a=0; $a<=$rango; $a++){
-echo ("<h4> $datos[$a] </h4>");
+echo ("<h4> $datos[$a] </h4>");	
 }
 }
 echo ("<h3> ----------------------------------------------------------------------------------------------------------------------  </h3>");
@@ -32,8 +32,9 @@ asort($datos);
 
 foreach ($datos as $c => $v) {
     echo "Numero = "." $c Cantidad se repite = $v <br />";
-     $suma += $c;	
+    $suma += $c;	
 }
+echo "SUMA : ".$suma;
 echo ("<h3> ----------------------------------------------------------------------------------------------------------------------  </h3>");
 
 if($v == 1)
@@ -46,6 +47,7 @@ echo ("<h3> EL NÚMERO QUE MÁS SE REPITE ES :   **  $c  **  Y SE REPITE : **  $
 }
 //
 $resta= $c * $v;
+echo "RESTA : ".$resta;
 $total = ($suma - $resta);
 //
 if($v == 1)
