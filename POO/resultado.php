@@ -68,6 +68,9 @@ $params = [
     'direccion' => $personas->getDireccion(),
 ];
 $statement->execute($params);
+
+//session_destroy();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,7 +107,7 @@ $statement->execute($params);
 
 <?php
 $ultimo = end($valores);
-echo $ultimo;
+echo "<h1>".$ultimo;"</h1>";
 
 ?>
 

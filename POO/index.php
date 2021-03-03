@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,7 @@
     <title>PERSONAS</title>
 </head>
 <body>
+<button  onclick="location.href='listar_personas.php'" style="margin-left:25%;margin-top:2%; width:10%;height: 55px;background:rgb(167, 11, 159);border-radius: 15px; border-color: rgb(195, 194, 194);    color: white;font-size: 24px;">Ver DB</button>
     <form method="POST" action="resultado.php">
         <div id="izquierda">
             <label for="">Nombre</label>
