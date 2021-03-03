@@ -8,11 +8,16 @@ foreach($filas as $fila){
 print_r($fila);
 }*/
 
-$contenido = file_get_contents("datos.json");
+$contenido = file_get_contents('datos.json');
 $con = utf8_encode($contenido);
-$datos = json_decode($con, true);
-$hay = count($datos["personas"]);
-$personas = $datos["personas"];
+$datos = json_decode($con, true, 1024);
+
+foreach ($datos as $product) {
+    echo "<pre>";
+    print_r($product);
+    echo '</pre>';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +43,7 @@ $personas = $datos["personas"];
    <tbody>
      <?php foreach($personas as $empleado){ ?>
      <?php echo "<tr>"; ?>
-     <?php echo "<td>$personas[nombre]</td>"; ?>
+     <?php echo "<td>$datos</td>"; ?>
      <?php echo "</tr>"; ?>
 <?php
 }
